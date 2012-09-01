@@ -23,10 +23,10 @@ If you have questions or put this to use then hit me up on [Twitter])http://twit
 
 Here are some neat plugins I recommend to give additional functionality or make your life easier:
 
-[Advanced Custom Fields](http://www.advancedcustomfields.com/) - Easily add custom meta boxes / fields to your post types
-[Gravity Forms](http://www.gravityforms.com/) - The best form plugin there is. Period
-[Breadcrumb Nav XT](http://wordpress.org/extend/plugins/breadcrumb-navxt/) - Create breadcrumb navigation with custom post type support
-[Remove Title Attributes](http://wordpress.org/extend/plugins/remove-title-attributes/) - Remove the annoying "View all posts filed under" title attributes from your site
-[WP Page Numbers](http://wordpress.org/extend/plugins/wp-page-numbers/) - Turn your next and previous links into pagination
-[Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) - Re-process existing wp_post_thumbnails when you create a new size
-[Disable Revisions](http://wordpress.org/extend/plugins/disable-revisions/) and [Disable Autosave](http://exper.3drecursions.com/2008/07/25/disable-revisions-and-autosave-plugin/) - Ensure you don't clog up your database during development
+- [Advanced Custom Fields](http://www.advancedcustomfields.com/) - Easily add custom meta boxes / fields to your post types
+- [Gravity Forms](http://www.gravityforms.com/) - The best form plugin there is. Period
+- [Breadcrumb Nav XT](http://wordpress.org/extend/plugins/breadcrumb-navxt/) - Create breadcrumb navigation with custom post type support
+- [Remove Title Attributes](http://wordpress.org/extend/plugins/remove-title-attributes/) - Remove the annoying "View all posts filed under" title attributes from your site
+- [WP Page Numbers](http://wordpress.org/extend/plugins/wp-page-numbers/) - Turn your next and previous links into pagination
+- [Regenerate Thumbnails](http://wordpress.org/extend/plugins/regenerate-thumbnails/) - Re-process existing wp_post_thumbnails when you create a new size
+- [Disable Revisions](http://wordpress.org/extend/plugins/disable-revisions/) and [Disable Autosave](http://exper.3drecursions.com/2008/07/25/disable-revisions-and-autosave-plugin/) - Ensure you don't clog up your database during development
