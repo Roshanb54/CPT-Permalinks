@@ -1,10 +1,10 @@
 # Custom Post Type Permalinks
 
-Say hello to a WordPress theme containing two more complicated examples of custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes). The theme is focused on two common problems: creating "pretty" permalinks which include a taxonomy, and a menu architecture that works solidly.
+Say hello to a WordPress theme containing two more complicated **examples of custom post types**; one hierarchical (Products) and one with custom taxonomies (Recipes). The theme is focused on two common problems: creating "pretty" permalinks which include a taxonomy, and a menu architecture that works solidly.
 
-Products are essentially a replica of the default Pages functionality, and Recipes are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
+**Products** are essentially a replica of the default Pages functionality, and **Recipes** are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
 
-This theme intended as an extension of existing themes, giving you the templates and functions needed to get you up and running with your own custom post types. As such this theme does not contain some of the standard WordPress templates and functions (e.g. the blog), but it could be used as a starting point for a more straight-up CMS project. You may also find parts useful in other areas of your own theme, so take what you need!
+This theme **intended as an extension** of existing themes, giving you the templates and functions needed to get you up and running with your own custom post types. As such this theme does not contain some of the standard WordPress templates and functions (e.g. the blog), but it could be used as a starting point for a more straight-up CMS project. You may also find parts useful in other areas of your own theme, so take what you need!
 
 **[Check out the demo](http://cptp.builtbyboon.com/)**
 
