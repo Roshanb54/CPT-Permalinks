@@ -1,0 +1,139 @@
+/*  
+Theme Name: Custom Post Type Pretty Permalinks
+Description: Say hello to a WordPress theme containing two more complicated examples of custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes). The theme is focused on two common problems: creating "pretty" permalinks which include a taxonomy, and a menu architecture that works solidly.
+Author: Matt Berridge
+Author URL: http://twitter.com/mattberridge
+*/
+
+/* -- Reset (of sorts) -- */
+body {
+  margin: 0;
+  font: 1em/1.5 sans-serif; }
+
+a {
+	text-decoration: none;
+	color: #891434; }
+	
+a:hover,
+a:active,
+a:focus {
+	color: #222; }
+  
+h1 {
+	font-size: 2em; }
+ 
+h2, h3 {
+	margin-bottom: .25em; }
+ 
+* {
+	margin-top: 0; }
+	
+ul {
+	list-style: none;
+	padding-left: 0; }
+	
+ul ul {
+	padding-left: 1em; }
+ 
+/* -- Layout -- */
+.container {
+	overflow: hidden; 
+	width: 90%;
+	margin: 2em auto; }
+ 
+[role=main] {
+	width: 70%;
+	float: left;
+	padding-bottom: 5em; }
+	
+[role=complementary] {
+	width: 28%;
+	float: right; }
+
+/* -- Header -- */	
+.nav-primary li {
+  display: inline;
+  margin-right: .5em; }
+	
+.nav-primary a {
+	font-weight: bold;
+	border: 1px solid #ccc;
+	display: inline-block;
+	background: #fff;
+	padding: .5em .75em;
+	text-decoration: none; }
+	
+.nav-primary .current {
+	background-color: #333;
+	border-color: #333;
+	color: #fff; }
+
+.page-title {
+	background-color: #891434;
+	color: #fff; }
+
+/* -- Shared -- */	
+.page-title,
+.pagination {
+	padding: .5rem 1rem; }	
+
+/* -- Objects -- */		
+.filled {
+	background-color: whiteSmoke; }	
+
+.bordered {
+	border: 1px solid #ccc; }
+	
+.bordered.dotted {
+	border-style: dotted; }
+
+.panel {
+	padding: 1rem;
+	margin-bottom: 1em; }	
+
+/* -- Panels -- */
+.panel h2 {
+	font-size: 1.25em;
+	color: #333;
+	border-bottom: 1px dotted #ccc; }
+	
+.panel > :last-child {
+	margin-bottom: 0; }	
+
+.nav-secondary .current > a {
+	font-weight: bold; }
+	
+/* -- Loop -- */
+.entry-title {
+	margin: 0; }
+	
+.entry-meta {
+	font-weight: bold;
+	color: #555; }
+
+.entry-head {
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: .75em; }
+
+.media,
+.media-body {
+	overflow: hidden; }
+	
+.media-img {
+	float: right;
+	margin-left: 2em; }
+	
+.single-media {
+	border: 1px dotted #ccc;
+	max-width: 300px;
+	min-width: 200px; }
+	
+.product-index {
+	clear: both; }
+	
+/* -- Pagination -- */	
+.pagination {
+	overflow: hidden; }
+	
+.newer {
+	float: right; }
