@@ -6,14 +6,10 @@
 	<meta charset="utf-8">
 	<title><?php wp_title('', true, 'right'); ?></title>
 	<?php wp_head(); ?>
-	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
 <head>
 <body>
-
 	<div class="container">
-		<strong style="float: right">Sample content taken from <a href="http://www.lakeland.co.uk/">Lakeland</a> and <a href="http://www.bbcgoodfood.com/">BBC Good Food</a></strong>
-	
 		<nav>
 			<ul class="nav-primary">
 				<li>
