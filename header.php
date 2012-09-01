@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<title><?php wp_title('', true, 'right'); ?></title>
 	<?php wp_head(); ?>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/style.css">
 <head>
 <body>
