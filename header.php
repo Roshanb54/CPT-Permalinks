@@ -17,7 +17,7 @@
 		<nav>
 			<ul class="nav-primary">
 				<li>
-					<a href="<?= get_bloginfo('url'); ?>">
+					<a href="<?= get_bloginfo('url'); ?>"<?= is_home() ? ' class="current"' : '' ?>>
 						Home
 					</a>
 				</li>
