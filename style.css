@@ -64,8 +64,8 @@ img {
 	
 /* -- Header -- */	
 .nav-primary li {
-  display: inline;
-  margin-right: .5em; }
+	display: inline;
+	margin-right: .5em; }
 	
 .nav-primary a {
 	font-weight: bold;
@@ -83,7 +83,7 @@ img {
 .page-title {
 	background-color: #891434;
 	color: #fff; }
-
+	
 /* -- Shared -- */	
 .page-title,
 .pagination {
@@ -101,7 +101,7 @@ img {
 
 .panel {
 	padding: 1rem;
-	margin-bottom: 1em; }	
+	margin-bottom: 1em; }
 
 /* -- Panels -- */
 .panel h2 {
