@@ -11,6 +11,7 @@
 <head>
 <body>
 	<div class="container">
+		<strong class="credit">Sample content taken from <a href="http://www.lakeland.co.uk">Lakeland</a> and <a href="http://www.bbcgoodfood.com/">BBC Good Food</a></strong>
 		<nav>
 			<ul class="nav-primary">
 				<li>

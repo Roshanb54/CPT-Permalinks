@@ -5,45 +5,17 @@ Author: Matt Berridge
 Author URL: http://twitter.com/mattberridge
 */
 
-/* -- Reset (of sorts) -- */
-html {
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	font: 100%/1.5 sans-serif; } 
-	
-body {
-	margin: 0; }
-
-a {
-	text-decoration: none;
-	color: #891434; }
-	
-a:hover,
-a:active,
-a:focus {
-	color: #222; }
-  
-h1 {
-	line-height: 1.2;
-	font-size: 2em; }
- 
-h2, h3 {
-	margin-bottom: .25em; }
- 
-* {
-	margin-top: 0; }
-	
-ul {
-	list-style: none;
-	padding-left: 0; }
-	
-ul ul {
-	padding-left: 1em; }
-	
-img {
-	max-width: 100%;
-	display: block;
-	margin: 0 auto; }
+/* -- (Primitive) Reset -- */
+* { margin-top: 0; }
+html {font: 100%/1.5 sans-serif; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } 
+body { margin: 0; }
+a { text-decoration: none; color: #891434; }
+a:hover, a:active, a:focus { color: #222; }
+h1 { line-height: 1.2; font-size: 2em; }
+h2, h3 { margin-bottom: .25em; }
+ul { list-style: none; padding-left: 0; }
+ul ul { padding-left: 1em; }
+img { max-width: 100%; display: block; margin: 0 auto; }
  
 /* -- Layout -- */
 .container {
@@ -103,30 +75,6 @@ img {
 	padding: 1rem;
 	margin-bottom: 1em; }
 
-/* -- Panels -- */
-.panel h2 {
-	font-size: 1.25em;
-	color: #333;
-	border-bottom: 1px dotted #ccc; }
-	
-.panel > :last-child {
-	margin-bottom: 0; }	
-
-.nav-secondary .current > a {
-	font-weight: bold; }
-	
-/* -- Loop -- */
-.entry-title {
-	margin: 0 0 .3em 0; }
-	
-.entry-meta {
-	font-weight: bold;
-	color: #555; }
-
-.entry-head {
-	border-bottom: 1px dotted #ccc;
-	margin-bottom: .75em; }
-
 .media,
 .media-body {
 	overflow: hidden; }
@@ -141,20 +89,46 @@ img {
 	.media-img {
 		float: right;
 		margin-left: 2em; }
-		
-	.single-media {
-		max-width: 300px;
-		min-width: 200px; }
 }		
+	
+/* -- Panels -- */
+.panel h2 {
+	font-size: 1.25em;
+	color: #333;
+	border-bottom: 1px dotted #ccc; }
+	
+.panel > :last-child {
+	margin-bottom: 0; }	
+
+.nav-secondary .current > a {
+	font-weight: bold; }
+
+/* -- Entries -- */
+.entry-title {
+	margin: 0 0 .3em 0; }
+	
+.entry-meta {
+	font-weight: bold;
+	color: #555; }
+
+.entry-head {
+	border-bottom: 1px dotted #ccc;
+	margin-bottom: .75em; }
+
+.product-index {
+	clear: both; }		
 	
 .single-media {
 	border: 1px dotted #ccc; }
 
+@media only screen and (min-width: 40em) {
+	.single-media {
+		max-width: 300px;
+		min-width: 200px; }
+}	
+	
 .single-media img + h2 {
 	padding-top: .5em; }
-	
-.product-index {
-	clear: both; }
 	
 /* -- Pagination -- */	
 .pagination {
@@ -162,3 +136,16 @@ img {
 	
 .newer {
 	float: right; }
+	
+/* -- Credit -- */
+.credit {
+	display: block;
+	text-align: center;
+	margin-bottom: 1em; }
+
+@media only screen and (min-width: 60em) {
+	.credit {
+		float: right;
+		margin: 0; }
+		
+}	
