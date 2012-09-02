@@ -6,9 +6,13 @@ Author URL: http://twitter.com/mattberridge
 */
 
 /* -- Reset (of sorts) -- */
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	font: 100%/1.5 sans-serif; } 
+	
 body {
-  margin: 0;
-  font: 1em/1.5 sans-serif; }
+	margin: 0; }
 
 a {
 	text-decoration: none;
@@ -20,6 +24,7 @@ a:focus {
 	color: #222; }
   
 h1 {
+	line-height: 1.2;
 	font-size: 2em; }
  
 h2, h3 {
@@ -34,22 +39,29 @@ ul {
 	
 ul ul {
 	padding-left: 1em; }
+	
+img {
+	max-width: 100%;
+	display: block;
+	margin: 0 auto; }
  
 /* -- Layout -- */
 .container {
 	overflow: hidden; 
 	width: 90%;
 	margin: 2em auto; }
- 
-[role=main] {
-	width: 70%;
-	float: left;
-	padding-bottom: 5em; }
-	
-[role=complementary] {
-	width: 28%;
-	float: right; }
 
+@media only screen and (min-width: 60em) {
+	[role=main] {
+		width: 70%;
+		float: left;
+		padding-bottom: 5em; }
+		
+	[role=complementary] {
+		width: 28%;
+		float: right; }	
+}	
+	
 /* -- Header -- */	
 .nav-primary li {
   display: inline;
@@ -105,7 +117,7 @@ ul ul {
 	
 /* -- Loop -- */
 .entry-title {
-	margin: 0; }
+	margin: 0 0 .3em 0; }
 	
 .entry-meta {
 	font-weight: bold;
@@ -119,14 +131,27 @@ ul ul {
 .media-body {
 	overflow: hidden; }
 	
-.media-img {
-	float: right;
-	margin-left: 2em; }
+.media-body {
+	padding-top: 1em; }
+	
+@media only screen and (min-width: 40em) {
+	.media-body  {
+		padding-top: 0; }
+		
+	.media-img {
+		float: right;
+		margin-left: 2em; }
+		
+	.single-media {
+		max-width: 300px;
+		min-width: 200px; }
+}		
 	
 .single-media {
-	border: 1px dotted #ccc;
-	max-width: 300px;
-	min-width: 200px; }
+	border: 1px dotted #ccc; }
+
+.single-media img + h2 {
+	padding-top: .5em; }
 	
 .product-index {
 	clear: both; }

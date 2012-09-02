@@ -8,7 +8,7 @@
 					<div class="entry-body media">
 						<?php if(has_post_thumbnail()): ?>
 						<div class="media-img">
-							<?php my_the_post_thumbnail($post, 'thumb'); ?>
+							<?php my_the_post_thumbnail($post, 1, 'thumb'); ?>
 						</div>
 						<?php endif; ?>
 						<div class="media-body">

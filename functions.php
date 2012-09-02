@@ -17,10 +17,14 @@ add_image_size( 'single', 300, 300, true );
 
 // Output cleaner, linked post thumbnails
 // -------------------------------------------------------------
-function my_the_post_thumbnail($post, $type = null) {
-	if(!$type) { $type = 'thumbnail'; }
+function my_the_post_thumbnail($post, $linked = 1, $type = 'thumbnail') {
 	$attr = array( 'title' => '', 'alt' => $post->post_title, 'class' => 'entry-thumb' );
-	echo '<a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'" rel="bookmark">'.get_the_post_thumbnail($post->ID, $type, $attr).'</a>';
+	if($linked) {
+		echo '<a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'" rel="bookmark">'.get_the_post_thumbnail($post->ID, $type, $attr).'</a>';
+	}
+	else {
+		echo get_the_post_thumbnail($post->ID, $type, $attr);
+	}
 }
 
 // Test for pagination

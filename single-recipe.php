@@ -14,7 +14,7 @@
 					$list_ingredients = wp_get_object_terms($post->ID, 'recipe_ingredients');
 					if($list_ingredients || has_post_thumbnail()): ?>
 					<div class="media-img single-media panel bordered dotted">
-						<?php my_the_post_thumbnail($post, 'single'); ?>
+						<?php my_the_post_thumbnail($post, 0, 'single'); ?>
 						<?php
 						// List all ingredients (not linked)
 						if($list_ingredients): ?>
