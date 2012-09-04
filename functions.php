@@ -283,6 +283,7 @@ function _init_product_post_type() {
 			'supports' => array('title', 'page-attributes', 'editor', 'excerpt', 'thumbnail'),
 			'query_var' => true,
 			// this sets where the Products section lives
+			// this can be any depth e.g. about/company/products
 			'rewrite' => array( 'slug' => 'products', 'with_front' => false ),
 		)
 	);
@@ -405,7 +406,8 @@ function _init_recipe_post_type() {
 			'exclude_from_search' => false,
 			'hierarchical' => false,
 			'query_var' => true,
-			// this sets the taxonomy URL (must have tag base i.e. /with)
+			// this sets the taxonomy view URL (must have tag base i.e. /with)
+			// this can be any depth e.g. food/cooking/recipes/with
 			'rewrite' => array( 'slug' => 'recipes/with', 'with_front' => false ),
 		)
 	);
@@ -436,7 +438,8 @@ function _init_recipe_post_type() {
 			'exclude_from_search' => false,
 			'hierarchical' => true,
 			'query_var' => true,
-			// this sets the taxonomy URL (must have category base i.e. /type)
+			// this sets the taxonomy view URL (must have category base i.e. /type)
+			// this can be any depth e.g. food/cooking/recipes/type
 			'rewrite' => array( 'slug' => 'recipes/type', 'with_front' => false ),
 		)
 	);	
@@ -469,7 +472,8 @@ function _init_recipe_post_type() {
 			'has_archive' => true,
 			'supports' => array('title', 'editor', 'excerpt', 'thumbnail'),
 			'query_var' => true,
-			// this sets where the Recipes lives and contains a tag to insert the Cuisine in URL below
+			// this sets where the Recipes section lives and contains a tag to insert the Cuisine in URL below
+			// this can be any depth e.g. food/cooking/recipes/%recipe_cuisines%
 			'rewrite' => array( 'slug' => 'recipes/%recipe_cuisines%', 'with_front' => false ),
 		)
 	);
