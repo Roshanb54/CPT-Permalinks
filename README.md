@@ -2,7 +2,7 @@
 
 Say hello to a WordPress framework **built for CMS purposes** with two example custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes).</p>
 
-The theme is focused on solving two common problems &mdash; achieving a template &amp; menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name</code>`
+The theme is focused on solving two common problems &mdash; achieving a template &amp; menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name`
 
 **Products** are essentially a replica of the default Pages functionality, and **Recipes** are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
 
