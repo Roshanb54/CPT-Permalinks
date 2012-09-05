@@ -1,8 +1,8 @@
 # Custom Post Type Permalinks
 
-Say hello to a **free WordPress theme** containing two examples of custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes).
+Say hello to a WordPress framework **built for CMS purposes** with two example custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes).</p>
 
-The theme is focused on two common problems: achieving a template & menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name`
+The theme is focused on solving two common problems &mdash; achieving a template &amp; menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name</code>`
 
 **Products** are essentially a replica of the default Pages functionality, and **Recipes** are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
 
@@ -10,9 +10,9 @@ This theme **intended as an extension** of existing themes, giving you the templ
 
 **[Check out the demo](http://cptp.builtbyboon.com/)**
 
-[built by Boon](here: http://builtbyboon.com/) - given away free
+[built by Boon](http://builtbyboon.com/) - given away free
 
-If you have questions or put this to use then hit me up on [Twitter])http://twitter.com/mattberridge).
+If you have questions or put this to use then [hit me up on Twitter](http://twitter.com/mattberridge)
 
 ## Instructions
 
