@@ -6,15 +6,15 @@
 						<h1 class="page-title single-title">
 							<?php the_title(); ?>
 						</h1>
-						<p class="entry-meta"><time datetime="<?= the_time('c'); ?>" pubdate><?php the_time('jS F Y'); ?></time> in <?= get_the_term_list( $post->ID, 'recipe_cuisines', '', ' / ', '' ); ?></p>
+						<p class="entry-meta"><time datetime="<?= the_time('c'); ?>" pubdate><?php the_time('jS F Y'); ?></time> in <?= get_the_term_list($post->ID, 'recipe_cuisine', '', ' / ', ''); ?></p>
 					</header>
 				<?php while (have_posts()) : the_post(); ?>
 					<?php
 					// Test for ingredients
-					$list_ingredients = wp_get_object_terms($post->ID, 'recipe_ingredients');
+					$list_ingredients = wp_get_object_terms($post->ID, 'recipe_ingredient');
 					if($list_ingredients || has_post_thumbnail()): ?>
 					<div class="media-img single-media panel bordered dotted">
-						<?php my_the_post_thumbnail($post, 0, 'single'); ?>
+						<?php my_the_post_thumbnail($post->ID, 0, 'single'); ?>
 						<?php
 						// List all ingredients (not linked)
 						if($list_ingredients): ?>

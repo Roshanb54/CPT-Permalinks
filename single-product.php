@@ -10,7 +10,7 @@
 				<?php while (have_posts()) : the_post(); ?>
 					<?php if(has_post_thumbnail()): ?>
 					<div class="media-img single-media panel bordered dotted">
-						<?php my_the_post_thumbnail($post, 0, 'single'); ?>
+						<?php my_the_post_thumbnail($post->ID, 0, 'single'); ?>
 					</div>
 					<?php endif; ?>
 					<div class="media-body">

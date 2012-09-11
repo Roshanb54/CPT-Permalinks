@@ -1,14 +1,16 @@
 # Custom Post Type Permalinks
 
-Say hello to a WordPress framework **built for CMS purposes** with two example custom post types; one hierarchical (Products) and one with custom taxonomies (Recipes).</p>
+Say hello to a WordPress framework built for **CMS purposes** with two example custom post types; one hierarchical *(Products)* and one with custom taxonomies *(Recipes)*.</p>
 
-The theme is focused on solving two common problems &mdash; achieving a template &amp; menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name`
+The theme is focused on solving two common problems &mdash; achieving a template & menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. `/post-type/taxonomy-term/post-name`
 
-**Products** are essentially a replica of the default Pages functionality, and **Recipes** are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
+*Products* are essentially a replica of the default Pages functionality, and *Recipes* are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.
 
-This theme **intended as an extension** of existing themes, giving you the templates and functions needed to get you up and running with your own custom post types. As such this theme does not contain some of the standard WordPress templates and functions (e.g. the blog), but it could be used as a starting point for a more straight-up CMS project. You may also find parts useful in other areas of your own theme, so take what you need!
+This framework is **intended as an extension** of existing themes, giving you the templates and functions needed to get you up and running with your own Custom Post Types. As such this theme does not contain some of the standard WordPress templates (e.g. the blog), but it could be used as a starting point for a more straight-up CMS project. You may also find parts useful in other areas of your own theme, so take what you need!
 
-**[Check out the demo](http://cptp.builtbyboon.com/)**
+**Caveat:** *the CSS/styling is a bit primitive, the focus here is on WordPress!*
+
+**[Read all about it](http://builtbyboon.com/blog/custom-post-type-permalinks)** or **[Check out the demo](http://cptp.builtbyboon.com/)**
 
 [built by Boon](http://builtbyboon.com/) - given away free
 

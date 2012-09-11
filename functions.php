@@ -2,9 +2,11 @@
 /**
  * GENERAL HELPER FUNCTIONS
  *
- * These are helper theme functions which aren't related to custom post types
+ * These are theme functions which aren't related to custom post types
  */
 
+
+ 
 // Add excerpts to pages
 // -------------------------------------------------------------
 add_post_type_support( 'page', 'excerpt' );
@@ -17,13 +19,13 @@ add_image_size( 'single', 300, 300, true );
 
 // Output cleaner, linked post thumbnails
 // -------------------------------------------------------------
-function my_the_post_thumbnail($post, $linked = 1, $type = 'thumbnail') {
-	$attr = array( 'title' => '', 'alt' => $post->post_title, 'class' => 'entry-thumb' );
+function my_the_post_thumbnail($post_id, $linked = 1, $type = 'thumbnail') {
+	$attr = array( 'title' => '', 'alt' => get_the_title($post_id), 'class' => 'entry-thumb' );
 	if($linked) {
-		echo '<a href="'.get_permalink($post->ID).'" title="'.$post->post_title.'" rel="bookmark">'.get_the_post_thumbnail($post->ID, $type, $attr).'</a>';
+		echo '<a href="'.get_permalink($post_id).'" title="'.get_the_title($post_id).'" rel="bookmark">'.get_the_post_thumbnail($post_id, $type, $attr).'</a>';
 	}
 	else {
-		echo get_the_post_thumbnail($post->ID, $type, $attr);
+		echo get_the_post_thumbnail($post_id, $type, $attr);
 	}
 }
 
@@ -97,7 +99,7 @@ function get_root_pages($post_type = 'page') {
  * It also uses the navigation helper functions above
  * If you are NOT using the Products post type you may find this useful anyway, even just for pages!
  *
- * Call the sub navigation as follows: boons_insection_subnav('product', 'current');
+ * Call the sub navigation as follows: <?php boons_insection_subnav('product', 'current'); ?>
  * Attributes: 'product' = post type and 'current' = current class for <li>'s
  */
 
@@ -290,7 +292,7 @@ function _init_product_post_type() {
 	
 	// -------------------------------------------------------------
 	// FIX - Makes permalinks work!
-	// This must come at the end of your last custom post type (uncomment if you are only using the Products post type)
+	// This must come at the end of your LAST custom post type (uncomment if you are only using the Products post type)
 	// REMOVE after development (when everything's working!)
 	// -------------------------------------------------------------
 	//flush_rewrite_rules(); 
@@ -368,7 +370,7 @@ function page_recipes() {
 // Test if we're in the Recipes section (useful for highlighting navigation)
 // -------------------------------------------------------------
 function is_recipes() {
-	return (is_page('recipes') || is_singular('recipe') || is_tax('recipe_ingredients') || is_tax('recipe_cuisines'));
+	return (is_page('recipes') || is_singular('recipe') || is_tax('recipe_ingredient') || is_tax('recipe_cuisine'));
 }
 
  /**
@@ -384,7 +386,7 @@ function _init_recipe_post_type() {
 
 	// Create taxonomy (ingredients i.e. tags)
 	// -------------------------------------------------------------
-	register_taxonomy(
+	/*register_taxonomy(
 		'recipe_ingredients',
 		array( 'recipe' ),
 		array(
@@ -443,6 +445,69 @@ function _init_recipe_post_type() {
 			'rewrite' => array( 'slug' => 'recipes/type', 'with_front' => false ),
 		)
 	);	
+	*/
+		// Create taxonomy (ingredients i.e. tags)
+	// -------------------------------------------------------------
+	register_taxonomy(
+		'recipe_ingredient',
+		array( 'recipe' ),
+		array(
+			'labels' => array(
+				'name' => __( 'Ingredients' ),
+				'singular_name' => __( 'Ingredient' ),
+				'search_items' => __( 'Search Ingredients' ),
+				'popular_items' => __( 'Popular Ingredients' ),
+				'all_items' => __( 'All Ingredients' ),
+				'edit_item' => __( 'Edit Ingredient' ),
+				'update_item' => __( 'Update Ingredient' ),
+				'add_new_item' => __( 'Add New Ingredient' ),
+				'new_item_name' => __( 'New Ingredient' ),
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'show_ui' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'hierarchical' => false,
+			'query_var' => true,
+			// this sets the taxonomy view URL (must have tag base i.e. /with)
+			// this can be any depth e.g. food/cooking/recipes/with
+			'rewrite' => array( 'slug' => 'recipes/with', 'with_front' => false ),
+		)
+	);
+	
+	// Create taxonomy (cuisines i.e. categories)
+	// -------------------------------------------------------------
+	register_taxonomy(
+		'recipe_cuisine',
+		array( 'recipe' ),
+		array(
+			'labels' => array(
+				'name' => __( 'Cuisines' ),
+				'singular_name' => __( 'Cuisine' ),
+				'search_items' => __( 'Search Cuisines' ),
+				'popular_items' => __( 'Popular Cuisines' ),
+				'all_items' => __( 'All Cuisines' ),
+				'parent_item' => __( 'Parent Cuisine' ),
+				'parent_item_colon' => __( 'Parent Cuisine:' ),
+				'edit_item' => __( 'Edit Cuisine' ),
+				'update_item' => __( 'Update Cuisine' ),
+				'add_new_item' => __( 'Add New Cuisine' ),
+				'new_item_name' => __( 'New Cuisine' ),
+			),
+			'public' => true,
+			'show_in_nav_menus' => true,
+			'show_ui' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'hierarchical' => true,
+			'query_var' => true,
+			// this sets the taxonomy view URL (must have category base i.e. /type)
+			// this can be any depth e.g. food/cooking/recipes/type
+			'rewrite' => array( 'slug' => 'recipes/type', 'with_front' => false ),
+		)
+	);	
+
 
 	// Create post type (recipes i.e. posts)
 	// -------------------------------------------------------------
@@ -474,7 +539,7 @@ function _init_recipe_post_type() {
 			'query_var' => true,
 			// this sets where the Recipes section lives and contains a tag to insert the Cuisine in URL below
 			// this can be any depth e.g. food/cooking/recipes/%recipe_cuisines%
-			'rewrite' => array( 'slug' => 'recipes/%recipe_cuisines%', 'with_front' => false ),
+			'rewrite' => array( 'slug' => 'recipes/%recipe_cuisine%', 'with_front' => false ),
 		)
 	);
 
@@ -482,7 +547,7 @@ function _init_recipe_post_type() {
 	// -------------------------------------------------------------
 	add_filter('post_type_link', 'recipe_permalink_filter_function', 1, 3);
 	function recipe_permalink_filter_function( $post_link, $id = 0, $leavename = FALSE ) {
-	    if ( strpos('%recipe_cuisines%', $post_link) === 'FALSE' ) {
+	    if ( strpos('%recipe_cuisine%', $post_link) === 'FALSE' ) {
 	      return $post_link;
 	    }
 	    $post = get_post($id);
@@ -490,16 +555,16 @@ function _init_recipe_post_type() {
 	      return $post_link;
 	    }
 		// this calls the term to be added to the URL
-	    $terms = wp_get_object_terms($post->ID, 'recipe_cuisines');
+	    $terms = wp_get_object_terms($post->ID, 'recipe_cuisine');
 	    if ( !$terms ) {
-	      return str_replace('recipe/%recipe_cuisines%/', '', $post_link);
+	      return str_replace('recipes/%recipe_cuisine%/', '', $post_link);
 	    }
-	    return str_replace('%recipe_cuisines%', $terms[0]->slug, $post_link);
+	    return str_replace('%recipe_cuisine%', $terms[0]->slug, $post_link);
 	}
 
 	// -------------------------------------------------------------
 	// FIX - Makes permalinks work!
-	// This must come at the end of your last custom post type
+	// This must come at the end of your LAST custom post type
 	// REMOVE after development (when everything's working!)
 	// -------------------------------------------------------------
 	flush_rewrite_rules(); 
