@@ -20,7 +20,7 @@ If you have questions or put this to use then [hit me up on Twitter](http://twit
 
 1. Create a fresh install of WordPress on your server
 2. Download the theme and upload to the `/wp-content/themes folder`
-3. Active your theme from the *Appearance* menu
+3. Activate your theme via the *Appearance* menu
 4. Set your [permalink structure](http://codex.wordpress.org/Using_Permalinks) to `/%category%/%postname%/`
 5. **You're done**. Begin adding Products and Recipes to see the post types in action!
 
