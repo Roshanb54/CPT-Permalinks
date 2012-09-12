@@ -5,7 +5,7 @@
 					Custom Post Type Permalinks
 				</h1>
 				<p>Say hello to a WordPress framework built for <strong>CMS purposes</strong> with two example custom post types; one hierarchical <em>(Products)</em> and one with custom taxonomies <em>(Recipes)</em>.</p>
-				<p>The theme is focused on solving two common problems &mdash; achieving a template & menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. <code>/post-type/taxonomy-term/post-name</code></p>
+				<p>The theme is focused on solving two common problems &mdash; achieving a template &amp; menu architecture that works solidly, with permalinks that contain a taxonomy term in the URL e.g. <code>/post-type/taxonomy-term/post-name</code></p>
 				<p><em>Products</em> are essentially a replica of the default Pages functionality, and <em>Recipes</em> are a replica of Posts. The aim is to prove WordPress can be extended with flexible post types and search-friendly permalinks that mirror what comes out of the box.</p>
 				<p>This framework is <strong>intended as an extension</strong> of existing themes, giving you the templates and functions needed to get you up and running with your own Custom Post Types. As such this theme does not contain some of the standard WordPress templates (e.g. the blog), but it could be used as a starting point for a more straight-up CMS project. You may also find parts useful in other areas of your own theme, so take what you need!</p>
 				<p><strong>Caveat:</strong> <em>the CSS/styling is a bit primitive, the focus here is on WordPress!</em></p>	
@@ -16,9 +16,10 @@
 				<h2>Instructions</h2>
 				<ul>
 					<li>1.) Create a fresh install of <a href="http://wordpress.org">WordPress</a> on your server<li>
-					<li>2.) <a href="https://github.com/mattberridge/CPT-Permalinks">Download the theme</a> and upload to the <code>wp-content/themes</code> folder</li>
-					<li>3.) Set your <a href="http://codex.wordpress.org/Using_Permalinks">permalink structure</a> to <code>/%category%/%postname%/</code></li>
-					<li>4.) <strong>You're done</strong>. Begin adding Products and Recipes to see the post types in action!</li>
+					<li>2.) <a href="https://github.com/mattberridge/CPT-Permalinks">Download the theme</a> and upload to the <code>/wp-content/themes</code> folder</li>
+					<li>3.) Active your theme from the <em>Appearance</em> menu</li>
+					<li>4.) Set your <a href="http://codex.wordpress.org/Using_Permalinks">permalink structure</a> to <code>/%category%/%postname%/</code></li>
+					<li>5.) <strong>You're done</strong>. Begin adding Products and Recipes to see the post types in action!</li>
 				</ul>
 				<hr />
 				<h2>Further extensions</h2>
