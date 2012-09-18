@@ -57,7 +57,7 @@ function get_root_parent_id($post_id = null) {
 		$post_id = $post->ID;
 	}
 	global $wpdb;
-	$parent = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID = '$page_id'");
+	$parent = $wpdb->get_var("SELECT post_parent FROM $wpdb->posts WHERE post_type='page' AND post_status='publish' AND ID = '$post_id'");
 	if ($parent == 0) return $post_id;
 	else return root_parent_id($parent);
 }
@@ -92,70 +92,74 @@ function get_root_pages($post_type = 'page') {
  * PLUGIN - BOON'S IN-SECTION NAVIGATION
  *
  * This is a function to generate an "in this section" navigation which shows sub pages of the section you're in
- * It allows you to target any given post type (the post type MUST be hierarchical)
- * It is used by the Products post type below (do NOT remove if you are using this post type)
+ * It allows you to target any given post type (the post type MUST be hierarchical )
+ * It is used by the Products post type below (do NOT remove if you are using this post type )
  * It also uses the navigation helper functions above
  * If you are NOT using the Products post type you may find this useful anyway, even just for pages!
  *
- * Call the sub navigation as follows: <?php boons_insection_subnav('product', 'current'); ?>
+ * Call the sub navigation as follows: <?php boons_insection_subnav( 'product', 'current' ); ?>
  * Attributes: 'product' = post type and 'current' = current class for <li>'s
  */
 
 // Navigation function
 // -------------------------------------------------------------
-function boons_insection_subnav($post_type = 'page', $current_class = 'current') {
+function boons_insection_subnav( $post_type = 'page', $current_class = 'current' ) {
 
 	// Test if current page in sub navigation
 	// -------------------------------------------------------------
-	function subnav_is_current($post_id) {
+	function subnav_is_current( $post_id ) {
 		global $post;
-		return ($post_id==$post->ID);
+		return ( $post_id == $post->ID );
 	}
 
 	// Test next level in sub navigation
 	// -------------------------------------------------------------
-	function subnav_next_level($post_id, $next_level) {
+	function subnav_next_level( $post_id, $next_level ) {
 		global $post;
-		return ($next_level && subnav_is_current($post_id) || in_array($post_id, $post->ancestors));
+		return ( $next_level && subnav_is_current( $post_id ) || in_array( $post_id, $post->ancestors ) );
 	}
 
 	// Output subnav
 	// -------------------------------------------------------------
+	if ( $post_type == 'page' ) {
+		$sub_level_1 = get_sub_pages( get_root_parent_id( $post->ID ) );
+	} else {
+		$sub_level_1 = get_root_pages( $post_type );
+	}
 	// level 1
-	$sub_level_1 = get_root_pages($post_type);
-	if($sub_level_1): ?>
+	if ( $sub_level_1 ) : ?>
 	<ul class="nav-secondary level-1">
 		<?php
 		// level 1 items
-		foreach($sub_level_1 as $level_1_page):
+		foreach ( $sub_level_1 as $level_1_page ) :
 		$level_1_page_id = $level_1_page->ID;
 		?>
-		<li class="level-1-item<?= subnav_is_current($level_1_page_id) ? ' '.$current_class.'' : ''; ?>">
-			<?php link_by_id($level_1_page_id); ?>
+		<li class="level-1-item<?php echo subnav_is_current( $level_1_page_id ) ? ' ' . $current_class . '' : ''; ?>">
+			<?php link_by_id( $level_1_page_id ); ?>
 			<?php
 			// level 2
-			$sub_level_2 = get_sub_pages($level_1_page_id, $post_type);
-			if(subnav_next_level($level_1_page_id, $sub_level_2)): ?>
+			$sub_level_2 = get_sub_pages( $level_1_page_id, $post_type );
+			if (subnav_next_level( $level_1_page_id, $sub_level_2 ) ) : ?>
 			<ul class="level-2">
 				<?php
 				// level 2 items
-				foreach($sub_level_2 as $level_2_page):
+				foreach ( $sub_level_2 as $level_2_page ) :
 				$level_2_page_id = $level_2_page->ID;
 				?>
-				<li class="level-2-item<?= subnav_is_current($level_2_page_id) ? ' '.$current_class.'' : ''; ?>">
-					<?php link_by_id($level_2_page_id); ?>
+				<li class="level-2-item<?php echo subnav_is_current( $level_2_page_id ) ? ' ' . $current_class . '' : ''; ?>">
+					<?php link_by_id( $level_2_page_id ); ?>
 					<?php
 					// level 3
-					$sub_level_3 = get_sub_pages($level_2_page_id, $post_type);
-					if(subnav_next_level($level_2_page_id, $sub_level_3)): ?>
+					$sub_level_3 = get_sub_pages( $level_2_page_id, $post_type );
+					if (subnav_next_level( $level_2_page_id, $sub_level_3 ) ) : ?>
 					<ul class="level-3">
 						<?php
 						// level 3 items
-						foreach($sub_level_3 as $level_3_page):
+						foreach ( $sub_level_3 as $level_3_page ) :
 						$level_3_page_id = $level_3_page->ID;
 						?>
-						<li class="level-3-item<?= subnav_is_current($level_3_page_id) ? ' '.$current_class.'' : ''; ?>">
-							<?php link_by_id($level_3_page_id); ?>
+						<li class="level-3-item<?php echo subnav_is_current( $level_3_page_id ) ? ' ' . $current_class . '' : ''; ?>">
+							<?php link_by_id( $level_3_page_id ); ?>
 						</li>
 						<?php
 						// level 3 items
@@ -178,7 +182,7 @@ function boons_insection_subnav($post_type = 'page', $current_class = 'current')
 		endforeach; ?>
 	</ul>
 	<?php else: ?>
-	<p>No <?= $post_type; ?>s added yet</p>
+	<p>No <?php echo $post_type; ?>s added yet</p>
 	<?php endif; ?>
 <?
 }
