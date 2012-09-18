@@ -4,8 +4,6 @@
  *
  * These are theme functions which aren't related to custom post types
  */
-
-
  
 // Add excerpts to pages
 // -------------------------------------------------------------
