@@ -116,7 +116,13 @@ function boons_insection_subnav( $post_type = 'page', $current_class = 'current'
 	// -------------------------------------------------------------
 	function subnav_next_level( $post_id, $next_level ) {
 		global $post;
-		return ( $next_level && subnav_is_current( $post_id ) || in_array( $post_id, $post->ancestors ) );
+		if ( $post->ancestors == null ) {
+			$post_ancestors = array();
+		}
+		else {
+			$post_ancestors = $post->ancestors; 
+		}
+		return ( $next_level && subnav_is_current( $post_id ) || in_array( $post_id, $post_ancestors ) );
 	}
 
 	// Output subnav
