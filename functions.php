@@ -122,6 +122,7 @@ function boons_insection_subnav( $post_type = 'page', $current_class = 'current'
 	// Output subnav
 	// -------------------------------------------------------------
 	if ( $post_type == 'page' ) {
+		global $post;
 		$sub_level_1 = get_sub_pages( get_root_parent_id( $post->ID ) );
 	} else {
 		$sub_level_1 = get_root_pages( $post_type );
