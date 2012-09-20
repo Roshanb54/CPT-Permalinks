@@ -120,7 +120,7 @@ function get_insection_subnav( $post_type = 'page' ) {
 	}
 }
 
-function insection_subnav( $current_class = 'current_page_item', $post_type = 'page' ) {
+function insection_subnav( $post_type = 'page', $current_class = 'current_page_item' ) {
 
 	// Test if current page in sub navigation
 	// -------------------------------------------------------------
