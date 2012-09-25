@@ -405,70 +405,8 @@ function is_recipes() {
 add_action('init', '_init_recipe_post_type');
 
 function _init_recipe_post_type() {
-
-	// Create taxonomy (ingredients i.e. tags)
-	// -------------------------------------------------------------
-	/*register_taxonomy(
-		'recipe_ingredients',
-		array( 'recipe' ),
-		array(
-			'labels' => array(
-				'name' => __( 'Ingredients' ),
-				'singular_name' => __( 'Ingredient' ),
-				'search_items' => __( 'Search Ingredients' ),
-				'popular_items' => __( 'Popular Ingredients' ),
-				'all_items' => __( 'All Ingredients' ),
-				'edit_item' => __( 'Edit Ingredient' ),
-				'update_item' => __( 'Update Ingredient' ),
-				'add_new_item' => __( 'Add New Ingredient' ),
-				'new_item_name' => __( 'New Ingredient' ),
-			),
-			'public' => true,
-			'show_in_nav_menus' => true,
-			'show_ui' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'hierarchical' => false,
-			'query_var' => true,
-			// this sets the taxonomy view URL (must have tag base i.e. /with)
-			// this can be any depth e.g. food/cooking/recipes/with
-			'rewrite' => array( 'slug' => 'recipes/with', 'with_front' => false ),
-		)
-	);
 	
-	// Create taxonomy (cuisines i.e. categories)
-	// -------------------------------------------------------------
-	register_taxonomy(
-		'recipe_cuisines',
-		array( 'recipe' ),
-		array(
-			'labels' => array(
-				'name' => __( 'Cuisines' ),
-				'singular_name' => __( 'Cuisine' ),
-				'search_items' => __( 'Search Cuisines' ),
-				'popular_items' => __( 'Popular Cuisines' ),
-				'all_items' => __( 'All Cuisines' ),
-				'parent_item' => __( 'Parent Cuisine' ),
-				'parent_item_colon' => __( 'Parent Cuisine:' ),
-				'edit_item' => __( 'Edit Cuisine' ),
-				'update_item' => __( 'Update Cuisine' ),
-				'add_new_item' => __( 'Add New Cuisine' ),
-				'new_item_name' => __( 'New Cuisine' ),
-			),
-			'public' => true,
-			'show_in_nav_menus' => true,
-			'show_ui' => true,
-			'publicly_queryable' => true,
-			'exclude_from_search' => false,
-			'hierarchical' => true,
-			'query_var' => true,
-			// this sets the taxonomy view URL (must have category base i.e. /type)
-			// this can be any depth e.g. food/cooking/recipes/type
-			'rewrite' => array( 'slug' => 'recipes/type', 'with_front' => false ),
-		)
-	);	
-	*/
-		// Create taxonomy (ingredients i.e. tags)
+	// Create taxonomy (ingredients i.e. tags)
 	// -------------------------------------------------------------
 	register_taxonomy(
 		'recipe_ingredient',
